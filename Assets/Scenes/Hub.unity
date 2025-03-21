@@ -300,6 +300,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08bdb42a7413db34e867890b29e20ecd, type: 3}
+--- !u!4 &54547955 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 20206796327801284, guid: 0e3dd72b9472eb04ba080742aa01fea8, type: 3}
+  m_PrefabInstance: {fileID: 3119514732884170706}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &55980509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20928,7 +20933,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7293674580133180539, guid: 12eafd3b38e02a046a7f72eda46088a4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23137,10 +23142,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2015929427}
   - {fileID: 1448870310}
   - {fileID: 340282203}
   - {fileID: 543520462}
+  - {fileID: 616182177}
+  - {fileID: 2018375715}
+  - {fileID: 54547955}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1986130512
@@ -23608,7 +23615,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3490930834329334354, guid: 08bdb42a7413db34e867890b29e20ecd, type: 3}
   m_PrefabInstance: {fileID: 194993062}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &2015929427 stripped
 --- !u!1 &2018375711
 GameObject:
   m_ObjectHideFlags: 0
@@ -23707,8 +23713,9 @@ MeshFilter:
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &2018375715
 Transform:
-  m_CorrespondingSourceObject: {fileID: 20206796327801284, guid: 0e3dd72b9472eb04ba080742aa01fea8, type: 3}
-  m_PrefabInstance: {fileID: 3119514732884170706}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2018375711}
   serializedVersion: 2
@@ -24740,3 +24747,4 @@ SceneRoots:
   - {fileID: 318642003}
   - {fileID: 1615552777}
   - {fileID: 759681069}
+  - {fileID: 75136171}

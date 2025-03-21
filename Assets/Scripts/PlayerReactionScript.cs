@@ -1,36 +1,33 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerReactionScript : MonoBehaviour
 {
     public GameObject player;
-    public float detectionRange = 5f; // Distance à partir de laquelle l'animation est jouée
-    private Animator animator;
-    public string animationTrigger = "PlayAnimation"; // Nom du trigger de l'animation
+    public float detectionRange = 5f; 
+    public AudioClip soundClip;
+    private AudioSource audioSource;
 
-    void Start()
-    {
-        if (player == null)
-        {
-            Debug.LogError("Aucun GameObject joueur assigné à " + gameObject.name);
-        }
+    private bool alreadyPlayed= false;
 
-        animator = GetComponent<Animator>();
-        if (animator == null)
-        {
-            Debug.LogError("Aucun Animator trouvé sur " + gameObject.name);
-        }
-    }
 
     void Update()
     {
-        if (player != null && animator != null)
+        audioSource = GetComponent<AudioSource>();
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+        if (distance <= detectionRange)
         {
-            float distance = Vector3.Distance(transform.position, player.transform.position);
-
-            if (distance <= detectionRange)
+            if (alreadyPlayed == false)
             {
-                animator.SetTrigger(animationTrigger);
+                audioSource.PlayOneShot(soundClip);
+                Debug.Log("Son de réaction joué !");
+                alreadyPlayed = true;
             }
         }
+        else
+        {
+            alreadyPlayed= false;
+        }
+
     }
 }

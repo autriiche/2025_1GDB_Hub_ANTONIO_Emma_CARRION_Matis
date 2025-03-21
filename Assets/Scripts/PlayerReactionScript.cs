@@ -2,29 +2,35 @@ using UnityEngine;
 
 public class PlayerReactionScript : MonoBehaviour
 {
-    public GameObject JoueurCible = null;
-    //public sound
+    public GameObject player;
+    public float detectionRange = 5f; // Distance à partir de laquelle l'animation est jouée
+    private Animator animator;
+    public string animationTrigger = "PlayAnimation"; // Nom du trigger de l'animation
 
-    public float distanceMin = 0.5f;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // Jouer l'animation d'idle
+        if (player == null)
+        {
+            Debug.LogError("Aucun GameObject joueur assigné à " + gameObject.name);
+        }
+
+        animator = GetComponent<Animator>();
+        if (animator == null)
+        {
+            Debug.LogError("Aucun Animator trouvé sur " + gameObject.name);
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-        if (Vector3.Distance(transform.position, JoueurCible.transform.position) > distanceMin) // Verifie que la distance minimale est respectée
+        if (player != null && animator != null)
         {
-            Debug.Log("Son enclenché");
-        }
-        else
-        {
-            // jouer l'animation d'idle
-        }
+            float distance = Vector3.Distance(transform.position, player.transform.position);
 
+            if (distance <= detectionRange)
+            {
+                animator.SetTrigger(animationTrigger);
+            }
+        }
     }
 }

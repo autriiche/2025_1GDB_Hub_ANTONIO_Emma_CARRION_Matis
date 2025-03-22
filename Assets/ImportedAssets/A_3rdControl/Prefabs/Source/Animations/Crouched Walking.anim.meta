@@ -11,6 +11,6 @@ AssetOrigin:
   productId: 278977
   packageName: EasyStart Third Person Controller
   packageVersion: 1.0
-  assetPath: Assets/EasyStart Third Person Controller/Prefabs/Source/Animations/Crouched
+  assetPath: Assets/ImportedAssets/A_3rdControl/Prefabs/Source/Animations/Crouched
     Walking.anim
   uploadId: 649404
